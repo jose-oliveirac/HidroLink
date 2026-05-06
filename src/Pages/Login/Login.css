@@ -1,0 +1,115 @@
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.bem-vindo {
+    margin: 13px;
+        font-weight: 400;
+
+}
+
+.subtitle {
+    margin: 10px;
+    opacity: 35%;
+}
+
+.subtitle-2 {
+    opacity: 30%;
+}
+
+.fazer-login {
+    font-weight: 400;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: -10px;
+    
+}
+
+.caixa-login {
+    background-color: white;
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+}
+.container-bem-vindo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px;
+    
+}
+
+.logo-centralizada {
+    width: 35%;
+}
+
+.form-group {
+    width: 94%;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-group input{
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Comfortaa', sans-serif;
+    border: 1px solid #ccc;
+    
+
+}
+
+.btn-entrar {
+    background-color: #43B73D;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 999;
+    font-family: 'Comfortaa', sans-serif;
+    border-radius: 6px;
+    width: 94%;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+
+    margin: 9px; /*Posteriormente analisar porque a margem está vindo de um eixo da parte superior esquerda */
+
+    padding: 10px;
+    
+}
+
+.btn-entrar:hover {
+    background-color: #89FF83;
+    transition: background-color 0.3s ease;
+}
+
+.creditos-licencas {
+    opacity: 45%;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.subtitle-creditos {
+    opacity: 45%;
+    
+}
+
+.links-ajuda {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    opacity: 55%;
+}
+
