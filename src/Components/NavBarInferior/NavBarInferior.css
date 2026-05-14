@@ -1,0 +1,38 @@
+nav {
+    background-color: #DCEDEA;
+    padding: 8px 14px;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.Pages {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Pages button {
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: background-color 0.2s ease;
+}
+
+.Pages button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.Pages button.active {
+    background-color: #FFFFFF;
+}
