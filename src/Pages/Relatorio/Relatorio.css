@@ -1,0 +1,169 @@
+.relatorios-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.relatorios-content {
+  width: 100%;
+}
+
+.card-relatorios-principal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.relatorios-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.relatorios-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.relatorios-header p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.relatorios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.titulo-sessao {
+  margin: 0 0 24px 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.coluna-relatorios {
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-download:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.nome-arquivo {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.coluna-estatisticas {
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.stat-label {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.stat-valor {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.stat-verde {
+  background-color: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.stat-verde .stat-valor {
+  color: #16a34a;
+}
+
+.stat-roxo {
+  background-color: #e0e7ff;
+  border-color: #a5b4fc;
+  color: #3730a3;
+}
+
+.stat-roxo .stat-valor {
+  color: #4f46e5;
+}
+
+.stat-rosa {
+  background-color: #fce7f3;
+  border-color: #f9a8d4;
+  color: #9d174d;
+}
+
+.stat-rosa .stat-valor {
+  color: #db2777;
+}
+
+.footer-hidrolink {
+  text-align: center;
+  padding: 32px 0 16px 0;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-hidrolink p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .relatorios-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

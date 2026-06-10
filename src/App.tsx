@@ -1,31 +1,29 @@
 import './App.css'
-import NavBarInferior from './Components/NavBarInferior/NavBarInferior'
-import NavBarSuperior from './Components/NavBarSuperior/NavBarSuperior'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './Components/Layout'
 import Login from './Pages/Login/Login'
 import Home from './Pages/Home/Home'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import Monitoramento from './Pages/Monitoramento/Monitoramento'
+import Clima from './Pages/Clima/Clima'
+import Relatorio from './Pages/Relatorio/Relatorio'
+import Noticias from './Pages/Noticias/Noticias'
 
-function AppContent() {
-  const location = useLocation();
-  const mostrarNavBars = location.pathname !== '/Login';
-
-  return (
-    <>
-      {mostrarNavBars && <NavBarSuperior />}
-      {mostrarNavBars && <NavBarInferior />}
-
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Login' element={<Login />} />
-      </Routes>
-    </>
-  );
-}
 
 function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <Routes>
+        <Route path='/Login' element={<Login />} />
+
+        <Route element={<Layout />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/monitoramento' element={<Monitoramento />} />
+           <Route path='/clima' element={<Clima />} />
+           <Route path='/relatorios' element={<Relatorio />} />
+           <Route path='/noticias' element={<Noticias />} />
+        </Route>
+        
+      </Routes>
     </BrowserRouter>
   )
 }

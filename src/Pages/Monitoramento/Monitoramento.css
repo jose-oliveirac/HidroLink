@@ -1,0 +1,201 @@
+/* --- Container Principal --- */
+.monitoramento-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 24px 24px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.monitoramento-content {
+  width: 100%;
+}
+
+.card-monitoramento-principal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  text-align: left;
+}
+
+/* --- Cabeçalho --- */
+.monitoramento-header {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.monitoramento-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.monitoramento-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* --- Grid de 3 Colunas --- */
+.monitoramento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.coluna-sensor {
+  display: flex;
+  flex-direction: column;
+}
+
+.coluna-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.coluna-titulo h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* --- Coluna 1: Umidade --- */
+.lista-umidade {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item-umidade {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-setor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome-setor {
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.valor-setor {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.barra-fundo {
+  width: 100%;
+  height: 10px;
+  background-color: #dcfce7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barra-preenchimento {
+  height: 100%;
+  background-color: #4ade80;
+  border-radius: 6px;
+}
+
+/* --- Coluna 2: Temperatura --- */
+.caixa-temperatura {
+  background-color: #ffedd5;
+  border: 2px solid #fdba74;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.valor-temperatura {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #f97316;
+  line-height: 1;
+}
+
+.legenda-temperatura {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f97316;
+}
+
+.variacao-temperatura {
+  display: block;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- Coluna 3: Status --- */
+.lista-status {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome-sensor {
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.badge-online {
+  border: 1px solid #86efac;
+  color: #22c55e;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* --- Rodapé --- */
+.footer-hidrolink {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 32px 0 16px 0;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-hidrolink p {
+  margin: 0;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+  .monitoramento-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

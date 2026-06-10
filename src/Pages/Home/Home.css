@@ -1,0 +1,209 @@
+.home-container {
+  width: 100%;
+  padding: 24px;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.cards-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 20px; 
+  width: 100%;
+}
+
+.cards-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); 
+}
+
+.card.large {
+  min-height: 280px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.titulo-card {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* Dados Dinâmicos e Tipografia */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.valor-card {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1;
+}
+
+.status-online {
+  color: #22c55e;
+}
+
+.subtexto-card {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Barra de Progresso Umidade */
+.barra-progresso-container {
+  width: 100%;
+  height: 8px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.barra-progresso {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 4px;
+}
+
+/* Alerta e Botões */
+.alerta-irrigacao {
+  background-color: #f0fdf4; 
+  border: 1px solid #bbf7d0; 
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.alerta-irrigacao strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #166534;
+}
+
+.alerta-irrigacao p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #15803d;
+  line-height: 1.5;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn-aceitar, .btn-ignorar {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-aceitar {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btn-aceitar:hover {
+  background-color: #16a34a;
+}
+
+.btn-ignorar {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.btn-ignorar:hover {
+  background-color: #e5e7eb;
+}
+
+/* Lista de Relatórios */
+.lista-relatorio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-relatorio {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+}
+
+.info-data {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.info-detalhe {
+  font-size: 0.95rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.info-economia {
+  font-size: 0.9rem;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .item-relatorio {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .info-economia {
+    text-align: left;
+  }
+}

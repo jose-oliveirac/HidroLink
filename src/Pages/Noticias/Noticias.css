@@ -1,0 +1,137 @@
+.noticias-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.noticias-content {
+  width: 100%;
+}
+
+.noticias-header {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.noticias-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.noticias-header p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.noticias-lista-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.noticias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.noticia-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.noticia-card:hover {
+  border-color: #16a34a;
+}
+
+.noticia-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.noticia-tag {
+  background-color: #dcfce7;
+  color: #16a34a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.noticia-tempo {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.noticia-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.noticia-corpo h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1f2937;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.noticia-corpo p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.noticia-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.noticia-link:hover {
+  color: #15803d;
+}
+
+.footer-hidrolink {
+  text-align: center;
+  padding: 32px 0 16px 0;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-hidrolink p {
+  margin: 0;
+}
