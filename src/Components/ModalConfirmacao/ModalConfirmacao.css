@@ -1,0 +1,123 @@
+/* ===== Fundo escurecido (overlay) ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: modal-fade 0.2s ease;
+}
+
+/* ===== Card central ===== */
+.modal-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 36px 32px 28px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  animation: modal-surge 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ===== Botão X de fechar ===== */
+.modal-fechar-x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-fechar-x:hover {
+  background-color: #f3f4f6;
+  color: #1a1a1a;
+}
+
+/* ===== Ícone de sucesso ===== */
+.modal-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background-color: #f0fdf4;
+}
+
+.modal-icone svg {
+  stroke: #16a34a;
+}
+
+/* ===== Textos ===== */
+.modal-titulo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.modal-mensagem {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+
+/* ===== Botão de fechar/OK ===== */
+.modal-botao {
+  width: 100%;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 10px;
+  background-color: #16a34a;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.modal-botao:hover {
+  opacity: 0.92;
+}
+
+.modal-botao:active {
+  transform: scale(0.98);
+}
+
+/* ===== Animações ===== */
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-surge {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

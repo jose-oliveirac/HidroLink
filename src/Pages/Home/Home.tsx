@@ -1,7 +1,11 @@
 import './Home.css'
+import { useState } from 'react'
 import { Droplets, Thermometer, Cloud, CheckCircle2, AlertTriangle, CalendarDays } from 'lucide-react'
+import ModalConfirmacao from '../../Components/ModalConfirmacao/ModalConfirmacao'
 
 function Home() {
+  const [modalAberto, setModalAberto] = useState(false)
+
   return (
     <div className="home-container">
       <main className="dashboard-content">
@@ -71,7 +75,7 @@ function Home() {
             </div>
 
             <div className="botoes-acao">
-              <button className="btn-aceitar">Aceitar e Agendar</button>
+              <button className="btn-aceitar" onClick={() => setModalAberto(true)}>Aceitar e Agendar</button>
               <button className="btn-ignorar">Ignorar</button>
             </div>
           </div>
@@ -101,6 +105,12 @@ function Home() {
           </div>
         </section>
       </main>
+
+      <ModalConfirmacao
+        aberto={modalAberto}
+        onFechar={() => setModalAberto(false)}
+        mensagem="Irrigação agendada para hoje às 18h, por 45 minutos no Setor Sul."
+      />
     </div>
   )
 }

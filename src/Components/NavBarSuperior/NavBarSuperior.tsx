@@ -1,21 +1,34 @@
 import './NavBarSuperior.css'
-import { User } from 'lucide-react'
+import { Settings } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 function NavBarSuperior() {
- return (
-<> 
-<header>
-<div className='img_logo'>
-    <img src="/assets/images/logo_horizontal.png" alt="Logo HidroLink horizontal" />
-</div>
-<div className='buttons-rightside'>
-    <button type='button'><User size={30}/></button>
-    <button type='button'>Sair</button>
-</div>
-</header>
+  const navigate = useNavigate()
 
-</>
-    )
+  return (
+    <>
+      <header>
+        <div className='img_logo'>
+          <img src="/assets/images/logo_horizontal.png" alt="Logo HidroLink horizontal" />
+        </div>
+        <div className='buttons-rightside'>
+          <button
+            type='button'
+            onClick={() => navigate('/configuracoes')}
+            aria-label='Configurações'
+          >
+            <Settings size={24} />
+          </button>
+          <button
+            type='button'
+            onClick={() => navigate('/Login')}
+          >
+            Sair
+          </button>
+        </div>
+      </header>
+    </>
+  )
 }
 
 export default NavBarSuperior

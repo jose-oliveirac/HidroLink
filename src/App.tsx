@@ -7,7 +7,7 @@ import Monitoramento from './Pages/Monitoramento/Monitoramento'
 import Clima from './Pages/Clima/Clima'
 import Relatorio from './Pages/Relatorio/Relatorio'
 import Noticias from './Pages/Noticias/Noticias'
-
+import Configs from './Pages/Configs/Configs'
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
            <Route path='/clima' element={<Clima />} />
            <Route path='/relatorios' element={<Relatorio />} />
            <Route path='/noticias' element={<Noticias />} />
+           <Route path='/configuracoes' element={<Configs />} />
         </Route>
         
       </Routes>
