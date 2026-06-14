@@ -9,7 +9,7 @@ function NavBarSuperior() {
     <>
       <header>
         <div className='img_logo'>
-          <img src="/assets/images/logo_horizontal.png" alt="Logo HidroLink horizontal" />
+          <img src="/assets/images/hidrolinklogo.png" alt="Logo HidroLink horizontal" />
         </div>
         <div className='buttons-rightside'>
           <button
@@ -21,7 +21,7 @@ function NavBarSuperior() {
           </button>
           <button
             type='button'
-            onClick={() => navigate('/Login')}
+            onClick={() => navigate('/')}
           >
             Sair
           </button>

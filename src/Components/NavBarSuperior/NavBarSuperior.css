@@ -1,34 +1,54 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 40px;
-    background-color: white;
-    font-family: 'Comfortaa',sans-serif;
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    height: 90px;
-    
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background-color: white;
+  font-family: 'Comfortaa', sans-serif;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  height: 90px;
 }
 
 .buttons-rightside button {
-    border: none;
-    text-decoration: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 10px;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 10px;
 }
 
 .buttons-rightside {
-    margin-right: 40px;
-    align-items: center;
-    display: flex;
+  margin-right: 40px;
+  align-items: center;
+  display: flex;
 }
 
 header img {
-height: 65px;
-width: auto;
-object-fit: contain;
+  height: 250px;
+  width: auto;
+  object-fit: contain;
+  display: flex;
+  margin-top: 20px;
+}
 
+@media (max-width: 768px) {
+  header {
+    padding: 10px 16px;
+    height: 70px;
+  }
+
+  header img {
+    height: 200px;
+    margin-top: 12px;
+    margin-left: -20px;
+  }
+
+  .buttons-rightside {
+    margin-right: 0;
+  }
+
+  .buttons-rightside button {
+    margin: 4px;
+  }
 }

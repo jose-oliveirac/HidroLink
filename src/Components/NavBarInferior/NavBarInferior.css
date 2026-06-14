@@ -12,7 +12,7 @@ nav {
   gap: 12px;
   justify-content: center;
   align-items: center;
-  position: relative; 
+  position: relative;
 }
 
 .indicador-deslizante {
@@ -21,8 +21,8 @@ nav {
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
-  z-index: 1; 
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -39,8 +39,8 @@ nav {
   font-weight: 500;
   color: #1a1a1a;
   text-decoration: none;
-  position: relative; 
-  z-index: 2; 
+  position: relative;
+  z-index: 2;
   transition: color 0.2s ease;
 }
 
@@ -58,4 +58,39 @@ nav {
 
 .nav-item.active svg {
   stroke: #16a34a;
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: calc(100% - 32px);
+    border-radius: 16px;
+    padding: 6px 8px;
+    margin-top: 12px;
+  }
+
+  .Pages {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    /* esconde o texto, só mostra o ícone */
+    font-size: 0;
+    padding: 10px 14px;
+    gap: 0;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-item svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-item {
+    padding: 10px 8px;
+  }
 }

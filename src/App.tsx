@@ -13,17 +13,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/Login' element={<Login />} />
+        <Route path='/' element={<Login />} />
 
         <Route element={<Layout />}>
-          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/monitoramento' element={<Monitoramento />} />
-           <Route path='/clima' element={<Clima />} />
-           <Route path='/relatorios' element={<Relatorio />} />
-           <Route path='/noticias' element={<Noticias />} />
-           <Route path='/configuracoes' element={<Configs />} />
+          <Route path='/clima' element={<Clima />} />
+          <Route path='/relatorios' element={<Relatorio />} />
+          <Route path='/noticias' element={<Noticias />} />
+          <Route path='/configuracoes' element={<Configs />} />
         </Route>
-        
       </Routes>
     </BrowserRouter>
   )

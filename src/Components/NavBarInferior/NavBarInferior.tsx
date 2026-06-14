@@ -26,7 +26,7 @@ function NavBarInferior() {
           style={{ left: `${indicatorStyle.left}px`, width: `${indicatorStyle.width}px` }} 
         />
         
-        <NavLink to="/" className="nav-item">
+        <NavLink to="/home" className="nav-item">
           <Home size={22} /> Início
         </NavLink>
         <NavLink to="/monitoramento" className="nav-item">
