@@ -13,7 +13,7 @@ function Login() {
     <>
       <main>
         <div className="container-bem-vindo">
-          <img src="../public/assets/images/logo_horizontal.png" alt="logo HidroLink Horizontal" className="logo-centralizada"/>
+          <img src="/assets/images/logo_horizontal.png" alt="logo HidroLink Horizontal" className="logo-centralizada"/>
           <h1 className="bem-vindo">Bem-vindo a HidroLink!</h1>
           <p className="subtitle">
             Gestão inteligente de recursos hídricos para agricultura familiar
@@ -24,7 +24,7 @@ function Login() {
           <h2 className="fazer-login">Fazer Login</h2>
           <h4 className="subtitle-2">entre com suas credenciais para acessar o sistema</h4>
 
-          <form className="formulario-login" onSubmit={handleLogin}noValidate>
+          <form className="formulario-login" onSubmit={handleLogin} noValidate>
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input type="email" id="email" placeholder="seu@email.com" />
@@ -39,8 +39,8 @@ function Login() {
           </form>
 
           <div className="links-ajuda">
-            <a href="">Criar conta</a>
-            <a href="">Esqueceu a senha?</a>
+            <a href="#">Criar conta</a>
+            <a href="#">Esqueceu a senha?</a>
           </div>
 
           <div className='conta-google'>
@@ -48,7 +48,7 @@ function Login() {
           </div>
         </div>
 
-        <p className="creditos-licencas">© 2025 Hidrolink - Sigma Code Team</p>
+        <p className="creditos-licencas">© 2026 HidroLink - Sigma Code Team</p>
         <p className="subtitle-creditos">Tecnologia para agricultura sustentável</p>
       </main>
     </>

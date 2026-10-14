@@ -2,9 +2,11 @@ import './Home.css'
 import { useState } from 'react'
 import { Droplets, Thermometer, Cloud, CheckCircle2, AlertTriangle, CalendarDays } from 'lucide-react'
 import ModalConfirmacao from '../../Components/ModalConfirmacao/ModalConfirmacao'
+import { resumoHome, recomendacaoIrrigacao, relatorioSemanal } from '../../mocks/dados'
 
 function Home() {
   const [modalAberto, setModalAberto] = useState(false)
+  const { horario, duracaoMin, setor } = recomendacaoIrrigacao
 
   return (
     <div className="home-container">
@@ -19,11 +21,11 @@ function Home() {
               <Droplets color="#00bfff" size={24} />
             </div>
             <div className="card-body">
-              <h2 className="valor-card">38%</h2>
+              <h2 className="valor-card">{resumoHome.umidadeSolo}%</h2>
               <div className="barra-progresso-container">
-                <div className="barra-progresso" style={{ width: '38%' }}></div>
+                <div className="barra-progresso" style={{ width: `${resumoHome.umidadeSolo}%` }}></div>
               </div>
-              <span className="subtexto-card">Mínimo ideal: 45%</span>
+              <span className="subtexto-card">Mínimo ideal: {resumoHome.umidadeSoloMinima}%</span>
             </div>
           </div>
 
@@ -33,8 +35,8 @@ function Home() {
               <Thermometer color="#ff7f50" size={24} />
             </div>
             <div className="card-body">
-              <h2 className="valor-card">28°C</h2>
-              <span className="subtexto-card">Máxima prevista: 32°C</span>
+              <h2 className="valor-card">{resumoHome.temperatura}°C</h2>
+              <span className="subtexto-card">Máxima prevista: {resumoHome.temperaturaMaxima}°C</span>
             </div>
           </div>
 
@@ -44,7 +46,7 @@ function Home() {
               <Cloud color="#a0aec0" size={24} />
             </div>
             <div className="card-body">
-              <h2 className="valor-card">62%</h2>
+              <h2 className="valor-card">{resumoHome.umidadeAr}%</h2>
               <span className="subtexto-card">Condição estável</span>
             </div>
           </div>
@@ -55,8 +57,8 @@ function Home() {
               <CheckCircle2 color="#4ade80" size={24} />
             </div>
             <div className="card-body">
-              <h2 className="valor-card status-online">Online</h2>
-              <span className="subtexto-card">Última leitura: há 2 min</span>
+              <h2 className="valor-card status-online">{resumoHome.sensorOnline ? 'Online' : 'Offline'}</h2>
+              <span className="subtexto-card">Última leitura: {resumoHome.ultimaLeitura}</span>
             </div>
           </div>
         </section>
@@ -68,39 +70,31 @@ function Home() {
               <span className="titulo-card">Recomendação de Irrigação</span>
               <AlertTriangle color="#eab308" size={24} />
             </div>
-            
+
             <div className="alerta-irrigacao">
               <strong>Irrigar Recomendado</strong>
-              <p>Com base na umidade atual de 38% e na ausência de chuva prevista, recomendamos irrigação hoje às 18h por 45 minutos no Setor Sul.</p>
+              <p>Com base na umidade atual de {resumoHome.umidadeSolo}% e na ausência de chuva prevista, recomendamos irrigação hoje às {horario} por {duracaoMin} minutos no {setor}.</p>
             </div>
 
             <div className="botoes-acao">
-              <button className="btn-aceitar" onClick={() => setModalAberto(true)}>Aceitar e Agendar</button>
-              <button className="btn-ignorar">Ignorar</button>
+              <button type="button" className="btn-aceitar" onClick={() => setModalAberto(true)}>Aceitar e Agendar</button>
+              <button type="button" className="btn-ignorar">Ignorar</button>
             </div>
           </div>
-          
+
           <div className="card large card-relatorio">
             <div className="card-header">
               <span className="titulo-card">Relatório Semanal</span>
               <CalendarDays color="#6366f1" size={24} />
             </div>
             <div className="lista-relatorio">
-              <div className="item-relatorio">
-                <div className="info-data">Ontem, 18:00</div>
-                <div className="info-detalhe">Irrigação Concluída - 40 min</div>
-                <div className="info-economia">Economia: R$ 4,50</div>
-              </div>
-              <div className="item-relatorio">
-                <div className="info-data">13/06, 17:30</div>
-                <div className="info-detalhe">Irrigação Concluída - 30 min</div>
-                <div className="info-economia">Economia: R$ 3,20</div>
-              </div>
-              <div className="item-relatorio">
-                <div className="info-data">14/06  , 08:00</div>
-                <div className="info-detalhe">Cancelado (Precedência Climática)</div>
-                <div className="info-economia">Economia: R$ 8,00</div>
-              </div>
+              {relatorioSemanal.map((item) => (
+                <div className="item-relatorio" key={item.data}>
+                  <div className="info-data">{item.data}</div>
+                  <div className="info-detalhe">{item.detalhe}</div>
+                  <div className="info-economia">Economia: {item.economia}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -109,7 +103,7 @@ function Home() {
       <ModalConfirmacao
         aberto={modalAberto}
         onFechar={() => setModalAberto(false)}
-        mensagem="Irrigação agendada para hoje às 18h, por 45 minutos no Setor Sul."
+        mensagem={`Irrigação agendada para hoje às ${horario}, por ${duracaoMin} minutos no ${setor}.`}
       />
     </div>
   )

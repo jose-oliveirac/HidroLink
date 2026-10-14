@@ -1,5 +1,6 @@
 import './Monitoramento.css'
 import { Droplets, Thermometer, CheckCircle2 } from 'lucide-react'
+import { umidadePorSetor, temperaturaSolo, statusSensores } from '../../mocks/dados'
 
 function Monitoramento() {
   return (
@@ -20,27 +21,15 @@ function Monitoramento() {
                 <h3>Sensor de Umidade</h3>
               </div>
               <div className="conteudo-coluna lista-umidade">
-                <div className="item-umidade">
-                  <div className="info-setor">
-                    <span className="nome-setor">Setor A</span>
-                    <span className="valor-setor">68%</span>
+                {umidadePorSetor.map(({ setor, umidade }) => (
+                  <div className="item-umidade" key={setor}>
+                    <div className="info-setor">
+                      <span className="nome-setor">{setor}</span>
+                      <span className="valor-setor">{umidade}%</span>
+                    </div>
+                    <div className="barra-fundo"><div className="barra-preenchimento" style={{ width: `${umidade}%` }}></div></div>
                   </div>
-                  <div className="barra-fundo"><div className="barra-preenchimento" style={{width: '68%'}}></div></div>
-                </div>
-                <div className="item-umidade">
-                  <div className="info-setor">
-                    <span className="nome-setor">Setor C</span>
-                    <span className="valor-setor">72%</span>
-                  </div>
-                  <div className="barra-fundo"><div className="barra-preenchimento" style={{width: '72%'}}></div></div>
-                </div>
-                <div className="item-umidade">
-                  <div className="info-setor">
-                    <span className="nome-setor">Setor B</span>
-                    <span className="valor-setor">61%</span>
-                  </div>
-                  <div className="barra-fundo"><div className="barra-preenchimento" style={{width: '61%'}}></div></div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -52,10 +41,10 @@ function Monitoramento() {
               </div>
               <div className="conteudo-coluna">
                 <div className="caixa-temperatura">
-                  <span className="valor-temperatura">24°C</span>
+                  <span className="valor-temperatura">{temperaturaSolo.media}°C</span>
                   <span className="legenda-temperatura">Temperatura Média</span>
                 </div>
-                <span className="variacao-temperatura">variação: 22°C - 26°C</span>
+                <span className="variacao-temperatura">variação: {temperaturaSolo.minima}°C - {temperaturaSolo.maxima}°C</span>
               </div>
             </div>
 
@@ -66,18 +55,12 @@ function Monitoramento() {
                 <h3>Status dos sensores</h3>
               </div>
               <div className="conteudo-coluna lista-status">
-                <div className="item-status">
-                  <span className="nome-sensor">Sensor 1</span>
-                  <span className="badge-online">Online</span>
-                </div>
-                <div className="item-status">
-                  <span className="nome-sensor">Sensor 2</span>
-                  <span className="badge-online">Online</span>
-                </div>
-                <div className="item-status">
-                  <span className="nome-sensor">Sensor 3</span>
-                  <span className="badge-online">Online</span>
-                </div>
+                {statusSensores.map((sensor) => (
+                  <div className="item-status" key={sensor.nome}>
+                    <span className="nome-sensor">{sensor.nome}</span>
+                    <span className="badge-online">{sensor.online ? 'Online' : 'Offline'}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -85,7 +68,7 @@ function Monitoramento() {
       </main>
 
       <footer className="footer-hidrolink">
-        <p>© 2026 Hidrolink</p>
+        <p>© 2026 HidroLink - Sigma Code Team</p>
         <span>Tecnologia para agricultura sustentável</span>
       </footer>
     </div>

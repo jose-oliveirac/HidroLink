@@ -119,7 +119,7 @@ function Configs() {
       </p>
 
       <footer className="config-footer">
-        <p>© 2025 HidroLink — Sigma Code Team</p>
+        <p>© 2026 HidroLink - Sigma Code Team</p>
         <p>Tecnologia para agricultura sustentável</p>
       </footer>
     </div>

@@ -6,9 +6,9 @@
 
 **Monitoramento inteligente de irrigação para a agricultura familiar**
 
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=flat-square)]()
 
@@ -56,7 +56,7 @@ O objetivo é reduzir o desperdício de água e apoiar a tomada de decisão no c
 ### Frontend
 | Tecnologia | Uso |
 |---|---|
-| React 18 | Interface e componentes |
+| React 19 | Interface e componentes |
 | TypeScript | Tipagem estática |
 | Vite | Bundler e servidor de desenvolvimento |
 | React Router DOM | Roteamento entre páginas |
@@ -91,6 +91,8 @@ HidroLink/
 │   │   ├── NavBarInferior/
 │   │   ├── ModalConfirmacao/
 │   │   └── Layout.tsx
+│   ├── mocks/
+│   │   └── dados.ts        (dados fictícios até a API ficar pronta)
 │   ├── Pages/
 │   │   ├── Home/
 │   │   ├── Login/
@@ -141,5 +143,5 @@ Acesse `http://localhost:5173` no navegador.
 ---
 
 <div align="center">
-  <sub>© 2025 HidroLink · Sigma Code Team · Tecnologia para agricultura sustentável</sub>
+  <sub>© 2026 HidroLink · Sigma Code Team · Tecnologia para agricultura sustentável</sub>
 </div>

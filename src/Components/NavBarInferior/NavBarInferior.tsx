@@ -9,13 +9,19 @@ function NavBarInferior() {
   const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const activeLink = navRef.current?.querySelector('.active') as HTMLElement
-    if (activeLink) {
-      setIndicatorStyle({
-        left: activeLink.offsetLeft,
-        width: activeLink.offsetWidth,
-      })
+    const atualizarIndicador = () => {
+      const activeLink = navRef.current?.querySelector<HTMLElement>('.active')
+      // Em rotas fora da navbar (ex.: /configuracoes) o indicador some
+      setIndicatorStyle(
+        activeLink
+          ? { left: activeLink.offsetLeft, width: activeLink.offsetWidth }
+          : { left: 0, width: 0 }
+      )
     }
+
+    atualizarIndicador()
+    window.addEventListener('resize', atualizarIndicador)
+    return () => window.removeEventListener('resize', atualizarIndicador)
   }, [location])
 
   return (

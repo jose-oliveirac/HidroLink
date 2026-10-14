@@ -1,5 +1,6 @@
 import './Clima.css'
 import { Cloud } from 'lucide-react'
+import { climaHoje, previsaoProximosDias } from '../../mocks/dados'
 
 function Clima() {
   return (
@@ -18,69 +19,35 @@ function Clima() {
                 <div className="hoje-destaque">
                   <Cloud size={56} color="#1f2937" strokeWidth={1.5} />
                   <div className="hoje-temperatura">
-                    <span className="temp-valor">26°C</span>
-                    <span className="temp-desc">Parcialmente nublado</span>
+                    <span className="temp-valor">{climaHoje.temperatura}°C</span>
+                    <span className="temp-desc">{climaHoje.descricao}</span>
                   </div>
                 </div>
                 <div className="hoje-detalhes">
-                  <span>Umidade: 68%</span>
-                  <span>Chance de chuva: 20%</span>
+                  <span>Umidade: {climaHoje.umidade}%</span>
+                  <span>Chance de chuva: {climaHoje.chanceChuva}%</span>
                 </div>
               </div>
 
               <div className="card-recomendacao-clima">
                 <span className="rec-titulo">Recomendação</span>
-                <p className="rec-texto">Irrigação recomendada hoje à tarde</p>
+                <p className="rec-texto">{climaHoje.recomendacao}</p>
               </div>
             </div>
 
             <div className="clima-direito">
-              <h3 className="titulo-proximos">Próximos 15 dias</h3>
+              <h3 className="titulo-proximos">Próximos {previsaoProximosDias.length} dias</h3>
               <div className="lista-dias">
-                <div className="dia-row">
-                  <span className="dia-nome">Amanhã</span>
-                  <div className="dia-dados">
-                    <Cloud size={20} color="#9ca3af" />
-                    <span className="dia-temp">22°C</span>
-                    <span className="dia-chuva">10%</span>
+                {previsaoProximosDias.map((previsao) => (
+                  <div className="dia-row" key={previsao.dia}>
+                    <span className="dia-nome">{previsao.dia}</span>
+                    <div className="dia-dados">
+                      <Cloud size={20} color="#9ca3af" />
+                      <span className="dia-temp">{previsao.temperatura}°C</span>
+                      <span className="dia-chuva">{previsao.chanceChuva}%</span>
+                    </div>
                   </div>
-                </div>
-
-                <div className="dia-row">
-                  <span className="dia-nome">Quinta</span>
-                  <div className="dia-dados">
-                    <Cloud size={20} color="#9ca3af" />
-                    <span className="dia-temp">21°C</span>
-                    <span className="dia-chuva">15%</span>
-                  </div>
-                </div>
-
-                <div className="dia-row">
-                  <span className="dia-nome">Sexta</span>
-                  <div className="dia-dados">
-                    <Cloud size={20} color="#9ca3af" />
-                    <span className="dia-temp">19°C</span>
-                    <span className="dia-chuva">9%</span>
-                  </div>
-                </div>
-
-                <div className="dia-row">
-                  <span className="dia-nome">Sábado</span>
-                  <div className="dia-dados">
-                    <Cloud size={20} color="#9ca3af" />
-                    <span className="dia-temp">27°C</span>
-                    <span className="dia-chuva">20%</span>
-                  </div>
-                </div>
-
-                <div className="dia-row">
-                  <span className="dia-nome">Domingo</span>
-                  <div className="dia-dados">
-                    <Cloud size={20} color="#9ca3af" />
-                    <span className="dia-temp">30°C</span>
-                    <span className="dia-chuva">22%</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
